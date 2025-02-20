@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     UIManager uiManager;
 
+    public GameObject SettingPannel;
+
     public UIManager UIManager { get { return uiManager; } }
 
 
@@ -26,17 +28,11 @@ public class GameManager : MonoBehaviour
         uiManager.UpdateScore(0);
     }
 
-    //public void GameOver()
-    //{
-    //    //Debug.Log("Game Over");
-    //    //uiManager.SetRestart();
-    //}
-
-    //public void RestartGame()
-    //{
-    //    // 씬매니저 가져오기, 씬매니저 유징문 사용해야함
-    //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    //}
+    public void GameOver()
+    {
+        Debug.Log("Game Over");
+        SettingPannel.SetActive(true);
+    }
 
     // 점수추가
     public void AddScore(int score)

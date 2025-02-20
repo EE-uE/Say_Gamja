@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
-    //public TextMeshProUGUI restartText;
+    public GameObject SettingPannel;
+    public Text NowScoreText;
+    public Text BestScoreText;
+    public Text ScoreText;  
 
     void Start()
     {
@@ -16,24 +18,25 @@ public class UIManager : MonoBehaviour
         //    Debug.LogError("restart text is null");
         //}
 
-        if (scoreText == null)
+        if (NowScoreText == null)
         {
             Debug.LogError("scoreText is null");
             return;
         }
 
-        //restartText.gameObject.SetActive(false);
+        SettingPannel.gameObject.SetActive(false);
     }
 
-    // restart 켜주는거
-    //public void SetRestart()
-    //{
-    //    restartText.gameObject.SetActive(true);
-    //}
+    //restart 켜주는거
+    public void SetRestart()
+    {
+        //SettingPannel.gameObject.SetActive(true);
+    }
 
     // 점수 최신화
     public void UpdateScore(int score)
     {
-        scoreText.text = score.ToString();
+        NowScoreText.text = score.ToString();
+        ScoreText.text = score.ToString();
     }
 }

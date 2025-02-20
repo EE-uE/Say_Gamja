@@ -6,9 +6,6 @@ public class BaseController : MonoBehaviour
 {
     protected Rigidbody2D _rigidbody;
 
-    // 인스펙터에 공개
-    [SerializeField] private SpriteRenderer spriteRenderer;
-
     // 이동하는 방향 지정
     protected Vector2 movementDirection = Vector2.zero;
     public Vector2 MovementDirection { get { return movementDirection; } }
@@ -53,7 +50,5 @@ public class BaseController : MonoBehaviour
     {
         float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         bool isLeft = Mathf.Abs(rotZ) > 90f;
-
-        spriteRenderer.flipX = isLeft;
     }
 }
